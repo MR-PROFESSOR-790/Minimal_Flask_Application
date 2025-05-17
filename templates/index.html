@@ -5,29 +5,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">User Registration</h1>
-        <form action="/register" method="POST">
-            <div class="mb-3">
-                <label for="fname" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="fname" name="fname" required>
+    <div class="container">
+        <div class="registration-container">
+            <h1 class="page-title">User Registration</h1>
+            <form action="/register" method="POST">
+                <div class="mb-4">
+                    <label for="fname" class="form-label">First Name</label>
+                    <input type="text" class="form-control form-control-lg" id="fname" name="fname" required placeholder="Enter your first name">
+                </div>
+                <div class="mb-4">
+                    <label for="lname" class="form-label">Last Name</label>
+                    <input type="text" class="form-control form-control-lg" id="lname" name="lname" required placeholder="Enter your last name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control form-control-lg" id="email" name="email" required placeholder="Enter your email">
+                    <div class="form-text text-muted">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                </div>
+            </form>
+            
+            <div class="mt-4 text-center">
+                <a href="/home" class="btn btn-success btn-lg">View Registered Users</a>
             </div>
-            <div class="mb-3">
-                <label for="lname" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="lname" name="lname" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-                <div class="form-text">We'll never share your email with anyone else.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
-        
-        <div class="mt-4">
-            <a href="/home" class="btn btn-success">View Registered Users</a>
         </div>
     </div>
 
